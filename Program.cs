@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PrintJob
 {
@@ -9,12 +6,8 @@ namespace PrintJob
     {
         public static void Main(string[] args)
         {
-            if (args.Length > 0)
-            {
-                Console.Out.WriteLine($"Job: {string.Join(",",args)}");
-                return;
-            }
-            Console.Out.WriteLine("No Input!!!");
+            var job = Environment.GetEnvironmentVariable("job");
+            Console.Out.WriteLine($"Job: {job}");
         }
     }
 }
